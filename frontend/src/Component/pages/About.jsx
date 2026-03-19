@@ -104,11 +104,11 @@ function About() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="about-tabs fade-in delay-9">
-                            <Link to="/contact">
+                        <div className="about-tabs  fade-in delay-9">
+                            <Link to="/contact" className=" text-decoration-none">
                                 <button className="active  shadow-sm transition-all active:scale-95">Hire the Engine</button>
                             </Link>
-                            <Link to="/projects">
+                            <Link to="/projects" className=" text-decoration-none ">
                                 <button className="transition-all active:scale-95">View My Work</button>
                             </Link>
                         </div>
