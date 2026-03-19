@@ -78,19 +78,38 @@ def support_api(request):
                     "Authorization": f"Bearer {resend_api_key}",
                     "Content-Type": "application/json",
                 },
+                # json={
+                #     "from": "Innocoda Support <onboarding@resend.dev>",
+                #     "to": "innocoda.team@gmail.com",
+                #     "subject": f"Vision Support Message from {support_instance.name}",
+                #     "html": f"""
+                #         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #7C53C5; border-radius: 10px;">
+                #             <h2 style="color: #7C53C5;">New Support Logged!</h2>
+                #             <p><strong>Supporter:</strong> {support_instance.name}</p>
+                #             <p style="font-size: 1.2rem; color: #E64A8D;"><strong>Amount:</strong> ₦{formatted_amount}</p>
+                #             <hr />
+                #             <p><strong>Message:</strong> {support_instance.message or 'No message left.'}</p>
+                #         </div>
+                #     """,
+                # },
                 json={
-                    "from": "Innocoda Support <onboarding@resend.dev>",
+                    "from": "Innocoda Team <onboarding@resend.dev>",
                     "to": "innocoda.team@gmail.com",
-                    "subject": f"💰 New Support: ₦{formatted_amount} from {support_instance.name}",
+                    # Helps Gmail trust the source
+                    "reply_to": getattr(support_instance, 'email', 'innocoda.team@gmail.com'),
+                    "subject": f"New Message from Vision Supporter: {support_instance.name}",
                     "html": f"""
-                        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #7C53C5; border-radius: 10px;">
-                            <h2 style="color: #7C53C5;">New Support Logged!</h2>
-                            <p><strong>Supporter:</strong> {support_instance.name}</p>
-                            <p style="font-size: 1.2rem; color: #E64A8D;"><strong>Amount:</strong> ₦{formatted_amount}</p>
-                            <hr />
-                            <p><strong>Message:</strong> {support_instance.message or 'No message left.'}</p>
-                        </div>
-                    """,
+                    <div style="font-family: sans-serif; padding: 20px; color: #333;">
+                        <h2 style="color: #4A5568;">You have a new message!</h2>
+                        <p><strong>From:</strong> {support_instance.name}</p>
+                        <p><strong>Intent Amount:</strong> {formatted_amount} NGN</p>
+                        <hr style="border: none; border-top: 1px solid #eee;" />
+                        <p><strong>Message:</strong></p>
+                        <blockquote style="background: #f9f9f9; padding: 15px; border-left: 5px solid #7C53C5;">
+                            {support_instance.message or 'No additional details provided.'}
+                        </blockquote>
+                    </div>
+                """,
                 },
                 timeout=10
             )
