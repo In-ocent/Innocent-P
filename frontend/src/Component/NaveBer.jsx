@@ -122,6 +122,7 @@ function NaveBer() {
                     >
                         <i className="bi bi-cup-hot fs-5"></i>
                     </NavLink>
+
                     <button
                         className="navbar-toggler d-md-none border-0"
                         type="button"
@@ -170,15 +171,21 @@ function NaveBer() {
                                     <i className="bi bi-house"></i> Home
                                 </NavLink>
                             </li>
+
                             <li>
                                 <NavLink
-                                    to="/about"
+                                    to="/Services"
                                     className="nav-link icons-hover"
                                     onClick={handleNavClick}
                                 >
-                                    <i className="bi bi-person"></i> About
+                                    <i class="bi bi-briefcase"></i> Services
                                 </NavLink>
                             </li>
+                            {/* <li className="icons-hover">
+                        <NavLink to="/Services" className={({ isActive }) => `d-flex align-items-center nav-link ${isActive ? "active" : ""}`}>
+                            <i class="bi bi-briefcase"></i> <span>Services</span>
+                        </NavLink>
+                    </li> */}
                             <li>
                                 <NavLink
                                     to="/projects"
@@ -186,6 +193,15 @@ function NaveBer() {
                                     onClick={handleNavClick}
                                 >
                                     <i className="bi bi-file-earmark-code"></i> Projects
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/about"
+                                    className="nav-link icons-hover"
+                                    onClick={handleNavClick}
+                                >
+                                    <i className="bi bi-person"></i> About
                                 </NavLink>
                             </li>
                             <li>
@@ -204,6 +220,16 @@ function NaveBer() {
                                     onClick={handleNavClick}
                                 >
                                     <i className="bi bi-chat-left"></i> Contact
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/support"
+                                    className="nav-link icons-hover"
+                                    onClick={handleNavClick}
+                                    title="Buy Me a Coffee ☕"
+                                >
+                                    <i className="bi bi-cup-hot fs-5"></i>Support
                                 </NavLink>
                             </li>
                         </ul>
@@ -242,15 +268,17 @@ function NaveBer() {
                         </button>
                         {/* ☝️*/}
                         <div className="offcanvas-footer py-2">
-                            <a
-                                href="#"
+
+                            <NavLink
+                                to="/support"
                                 className="container-coffee d-flex align-items-center justify-content-center p-2 coffee"
                                 data-bs-toggle="tooltip"
+                                onClick={handleNavClick}
                                 data-bs-placement="bottom"
                                 title="Buy Me a Coffee ☕"
                             >
                                 <i className="bi bi-cup-hot fs-5"></i>
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                     <p className="text-center my-title mt-2 ">

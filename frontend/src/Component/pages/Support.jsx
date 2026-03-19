@@ -66,7 +66,7 @@ function Support() {
 
         try {
             // Local test endpoint
-            const response = await axios.post("https://innocent-portfolio-backend.onrender.com/api/contact/", payload);
+            const response = await axios.post("https://innocent-portfolio-backend.onrender.com/api/support/", payload);
             // const response = await axios.post("https://innocent-portfolio-backend.onrender.com/api/support/", payload);
 
             if (response.status === 201 || response.status === 200) {
@@ -85,13 +85,18 @@ function Support() {
     return (
         <section className="mother">
             {/* PAN-AFRICAN HEADER */}
+
             <div className="container-content">
                 <div className="heart-image shadow-lg" style={{ background: 'linear-gradient(135deg, #E64A8D, #7C53C5)' }}>
                     <i className="bi bi-globe-africa"></i>
                 </div>
                 <h1 className="support-me uppercase italic font-black tracking-tighter mt-3">Support The Vision</h1>
                 <p className="text-content opacity-75 fw-medium px-md-5">
-                    I am engineering the future of the **African Construction Industry**.
+                    I am building the **digital backbone** for the African Construction Industry.
+                    Beyond just code, I am creating the transparency, safety, and efficiency
+                    required to scale our cities. Your support isn't just a donation—it's
+                    **direct fuel** for the research, compute, and integrity needed to
+                    revolutionize how Africa builds.**.
                 </p>
             </div>
 
