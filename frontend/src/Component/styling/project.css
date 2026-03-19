@@ -1,0 +1,227 @@
+:root[data-theme="light"] {
+  --nav-bg-color: #fff;
+  --bg-color: linear-gradient(135deg, #fdfbfb, #ebedee);
+  --text-color: #222;
+  --nav-text-color: #6c757d;
+  --border-bg-color: #fff;
+  --bg-border-color: #eee;
+  --highlight-color: #c15db5;
+  --btn-border-color: #000;
+}
+
+:root[data-theme="night"] {
+  --bg-color: #0d0d0d;
+  --text-color: #fff;
+  --nav-bg-color: #111;
+  --nav-text-color: #aaa;
+  --border-bg-color: #111;
+  --bg-border-color: #333;
+  --highlight-color: #c15db5;
+  --btn-border-color: #aaa;
+}
+html, body, #root {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+/* ===== Project Section ===== */
+.project-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem 1rem;
+}
+
+.project-section {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 6em;
+}
+
+.text-header {
+  font-size: 2.5rem;
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.text-header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(to left, rgb(193, 93, 181), rgb(203, 24, 203), purple);
+}
+
+.text-subheader {
+  font-size: 1.1rem;
+  margin-top: 0.5em;
+  color: var(--text-color);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ===== Project Grid ===== */
+.project-snippet {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2 cards on desktop */
+  gap: 2rem;
+  padding: 3rem 1rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* ===== Project Card ===== */
+.project-card {
+  background: var(--border-bg-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.project-card h2 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.project-type {
+  font-weight: 600;
+  color: var(--nav-text-color);
+  margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+  margin-top: 0.5rem;
+}
+
+.tech-tags span {
+  display: inline-block;
+  margin: 0.25rem 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  background-color: var(--bg-border-color);
+  color: var(--text-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ===== Challenges ===== */
+.challenges {
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+/* ===== Project Links ===== */
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.project-links .btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  background: linear-gradient(to right, #c15db5, purple);
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.project-links .btn:hover {
+  background: linear-gradient(to right, purple, #c15db5);
+}
+
+.project-links .github-btn {
+  background: #333;
+}
+
+.project-links .github-btn:hover {
+  background: #555;
+}
+
+/* ===== Image / Video ===== */
+.image-container {
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img,
+.image-container video.project-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  transform-origin: center center;
+}
+
+.project-card:hover .image-container img,
+.project-card:hover .image-container video.project-video {
+  transform: scale(1.08);
+  filter: brightness(1.08);
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 900px) {
+  .project-snippet {
+    grid-template-columns: 1fr; /* ✅ 1 card per row on mobile/tablet */
+  }
+
+  .project-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-header {
+    font-size: 2rem;
+  }
+
+  .text-subheader {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .project-links .btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}

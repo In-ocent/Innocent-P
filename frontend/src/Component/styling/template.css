@@ -1,0 +1,46 @@
+:root[data-theme="light"] {
+  --nav-bg-color:       #fff;
+  --bg-color:           #fdfbfb; /* fallback */
+  --bg-color:           linear-gradient(135deg, #fdfbfb, #ebedee);
+  --text-color:         #222;
+  --nav-text-color:     #6c757d;
+  --border-bg-color:    #fff;
+  --bg-border-color:    #eee;
+  --highlight-color:    #c15db5;
+  --btn-border-color:   #000;
+}
+
+:root[data-theme="night"] {
+  --bg-color:           #0d0d0d; /* fallback */
+  --bg-color:           linear-gradient(135deg, #0d0d0d, #111);
+  --text-color:         #fff;
+  --nav-bg-color:       #111;
+  --nav-text-color:     #aaa;
+  --border-bg-color:    #111;
+  --bg-border-color:    #333;
+  --highlight-color:    #c15db5;
+  --btn-border-color:   #aaa;
+}
+
+.coming-soon {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.coming-soon h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.coming-soon p {
+  font-size: 1.2rem;
+  color: #666;
+}

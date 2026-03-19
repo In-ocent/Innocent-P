@@ -1,0 +1,196 @@
+/* Full-width section */
+.about-section {
+  width: 100%;
+  padding: 6rem 2rem; /* Increased padding for more breathing room */
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease;
+}
+
+/* Wrapper for image + text */
+.about-wrapper {
+  display: flex;
+  align-items: flex-start; /* Better for long text */
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Profile image container */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative; /* Needed for the badge overlay */
+}
+
+.about-image img {
+  width: 280px; /* Slightly wider for a stronger presence */
+  height: 400px;
+  border-radius: 20px;
+  border: 4px solid var(--bg-boder-color);
+  padding: 8px;
+  box-shadow: 0px 15px 35px rgba(124, 83, 197, 0.2); /* Softer shadow for Day Light */
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* NEW: The "Kogi → Lagos → Africa" Badge */
+.image-overlay-badge {
+  position: absolute;
+  bottom: -15px;
+  background: linear-gradient(135deg, #f200ff, #7c53c5);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(192, 16, 195, 0.4);
+  white-space: nowrap;
+}
+
+.about-image img:hover { 
+  transform: translateY(-10px) scale(1.02); 
+  box-shadow: 0px 25px 50px rgba(124, 83, 197, 0.3);
+}
+
+/* Text content */
+.about-content {
+  flex: 1.5;
+  min-width: 320px;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(to right, #f200ff, #7c53c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+/* The Bold Mission Statement styling */
+.about-text.fw-bold {
+  border-left: 5px solid #7c53c5;
+  padding-left: 20px;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  background: rgba(124, 83, 197, 0.03); /* Subtle tint for Day Light */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Skill Badges - Interactive & Theme-Aware */
+.skill-badge {
+  padding: 0.6rem 1.2rem;
+  background: var(--nave-bg-color);
+  border: 1px solid rgba(124, 83, 197, 0.2);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-badge:hover {
+  background: #7c53c5;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(124, 83, 197, 0.3);
+}
+
+/* Responsive Fixes */
+@media (max-width: 900px) {
+  .about-wrapper { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 2rem;
+  }
+  .about-title { font-size: 2.5rem; }
+  .about-text.fw-bold { border-left: none; border-top: 3px solid #7c53c5; padding-left: 0; padding-top: 20px; }
+  .about-image img { width: 220px; height: 320px; }
+  .about-tabs { justify-content: center; }
+}
+/* Container for the buttons */
+.about-tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  align-items: center;
+}
+
+/* Base button styles */
+.about-tabs button {
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* PRIMARY: "Hire the Engine" Button */
+.about-tabs button.active {
+  background: linear-gradient(135deg, #f200ff, #7c53c5);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 10px 20px rgba(124, 83, 197, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+
+}
+
+.about-tabs button.active:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(124, 83, 197, 0.4);
+  filter: brightness(1.1);
+}
+
+/* SECONDARY: "View My Work" Button */
+.about-tabs button:not(.active) {
+  background: var(--card-bg-color); /* Adapts to Day Light */
+  color: var(--text-color);
+  border: 2px solid rgba(124, 83, 197, 0.2);
+}
+
+.about-tabs button:not(.active):hover {
+  background: rgba(124, 83, 197, 0.05);
+  border-color: #7c53c5;
+  color: #7c53c5;
+  transform: translateY(-4px);
+
+}
+
+/* Click Animation (Scale Down) */
+.active\:scale-95:active {
+  transform: scale(0.95) translateY(0);
+}
+
+/* Tablet & Mobile adjustment */
+@media (max-width: 600px) {
+  .about-tabs {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  .about-tabs a, 
+  .about-tabs button {
+    width: 100%;
+  }
+}

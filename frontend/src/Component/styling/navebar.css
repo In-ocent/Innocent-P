@@ -1,0 +1,540 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Theme variables */
+:root[data-theme="light"] {
+  --nav-bg-color: #ffffff !important;         /* solid nav */
+  --bg-color: linear-gradient(135deg, #fdfbfb, #ebedee) !important; /* keep gradient */
+  --text-color: #222222 !important;
+  --nav-border-color: #e0e0e0 !important;
+  --border-bg-color: #ffffff !important;      /* fixed typo */
+  --dive-container-day-night: #ffffff !important;
+  --card-bg-color: #ffffff !important;
+  --hover-card: #f5f5f5;
+}
+
+:root[data-theme='night']{
+  --bg-color:#000 !important;
+  --text-color:#fff !important;
+  --nav-bg-color:#000 !important;
+ --nav-border-color: #444 !important; /* dark border */
+  --boder-bg-color: rgba(0, 0, 0, 0.002) !important;
+   --dive-containe-day-night: black !important;
+   --card-bg-color: #171717  !important;
+  --hover--card: #000000;
+}
+
+
+
+/* Apply theme variables */
+.main-contaner{
+    background:var(--dive-containe-day-night) !important;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    scrollbar-color: #555 #222
+}
+.naveber{
+  background:var(--nave-bg-color) !important;
+  border-bottom: 1px solid var(--nav-border-color) !important;
+}
+
+.logo-desing {
+  width: 3rem;
+  height: 3rem;
+  border: solid 3px white;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(to right, #f200ff, #e7dee8);
+  box-shadow: 0 0 2px #e7dee8, 0 0 5px #d00be6;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-desing:hover {
+  box-shadow: 0 0 5px #e7dee8, 0 0 10px #e7dee8;
+  border: solid 3px #e7dee8;
+  transition: all 0.3s ease-in-out;
+}
+
+.offcanvas .logo-desing {
+  box-shadow: none !important;
+}
+.mobile_swich {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 600;
+
+  border: 2px solid var(--btn-border-color);
+  border-radius: 10px;
+  cursor: pointer;
+
+  /* Animation / Transition */
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect (desktop + larger devices) */
+.mobile_swich:hover {
+  background: var(--highlight-color);
+  color: #fff;
+  transform: translateY(-2px); /* slight lift */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) ;
+}
+
+/* Mobile tap effect */
+.mobile_swich:active {
+  transform: scale(0.95); /* shrink on tap */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) inset !important;
+}
+
+/* Add subtle glowing border in Night mode */
+:root[data-theme="night"] .mobile_swich {
+  border-color: var(--highlight-color) !important;
+  box-shadow: 0 0 8px rgba(193, 93, 181, 0.6) !important;
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+}
+
+/* a {
+  text-decoration: none;
+
+  color: black;
+  list-style: none;
+  font-weight: 200;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+} */
+
+
+.logo-name-div {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.my-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.my-title {
+  font-size: 1.0rem;
+  color: var(--nav-text-color);
+  font-weight: 400;
+}
+
+.icons-hover {
+  padding: 0.5em;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  font-weight: bolder;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* active router 👇 */
+.nav-link{
+  gap:4px;
+  color: var(--text-color);
+}
+.nav-link:hover{
+    border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 2px rgba(213, 5, 43, 0.25);
+  background: linear-gradient(135deg, rgb(196, 178, 196), rgb(190, 171, 190));
+  color: #8903ab;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+.active {
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 3px 6px rgba(213, 5, 43, 0.25);
+  background: linear-gradient(135deg, rgb(219, 185, 219), rgb(255, 230, 255));
+  color: #8903ab !important;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
+.active:hover {
+  background: linear-gradient(135deg, #dcb7dc, #f3e1f9) !important ;
+  color: #a205c2;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(137, 3, 171, 0.3) !important;
+}
+/* active router ☝️ */
+
+.container-coffee {
+   color: var(--text-color);
+  padding: 0.4em !important;
+  font-size: large !important;
+  font-weight: bolder !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.coffee:hover {
+  scale: 1.2 !important;
+}
+
+.mode-toggle {
+  border: 1px solid var(--border-color) !important ;
+  color: var(--text-color) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.mode-toggle:hover {
+  background: var(--gradient-bg) !important ;
+  color: var(--hover-color) !important;
+}
+
+/* Tooltip */
+.tooltip .tooltip-inner {
+  background: white !important;
+  color: black !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+.tooltip .tooltip-arrow::before {
+  border-bottom-color: #2575fc !important;
+}
+
+.offcanvas,
+.offcanvas-end,
+.offcanvas-header,
+.offcanvas-body {
+  box-shadow: none !important;
+  background: var(--bg-color) !important;   /* supports gradient */
+  color: #8903ab !important;
+}
+
+
+/* Base close button styling */
+.close-btn-left {
+  position: absolute;
+  top: 1rem;
+  left: 80%;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.close-btn-left:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Optional: adjust the default Bootstrap 'X' */
+.close-btn-left::before {
+  content: "×";
+  font-size: 1.5rem;
+  color: inherit;
+
+}
+
+/* Remove backdrop */
+.offcanvas-backdrop {
+  background-color:var(--bg-color) !important;
+  color: var(--text-color) !important ;
+}
+.navbar-toggler{
+  color: var(--text-color) !important;
+}
+
+/* the style is for contacting me style section */
+.contact_info{
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  z-index: 1;
+}
+
+/* social media icon 👇 */
+.social-media-container{
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+position: fixed;
+bottom: 170px;
+right:20px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 2px;
+}
+
+
+/* tiktok specsifikly */
+.social-media-container > :nth-child(1){
+ display: flex;              /* make it flex */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  width: 30px;                /* fixed size for circle */
+  height: 30px;
+  border-radius: 50%;         /* circle */
+  font-size: 18px;            /* adjust icon size */
+  color: white !important;
+  background: #000 !important;
+   transform: translateY(-10px); /* start slightly above */
+  transition: all 0.4s ease-in-out;
+}
+.social-media-container > :nth-child(2){
+ display: flex;              /* make it flex */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  width: 30px;                /* fixed size for circle */
+  height: 30px;
+  border-radius: 50%;         /* circle */
+  font-size: 18px;            /* adjust icon size */
+  color: white !important;
+
+  background: rgb(245, 12, 12);
+}
+
+.social-media-container > :nth-child(3){
+ display: flex;              /* make it flex */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  width: 30px;                /* fixed size for circle */
+  height: 30px;
+  border-radius: 50%;         /* circle */
+  font-size: 18px;            /* adjust icon size */
+  color: white;
+
+   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.social-media-container > :nth-child(4){
+   display: flex;              /* make it flex */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  width: 30px;                /* fixed size for circle */
+  height: 30px;
+  border-radius: 50%;         /* circle */
+  font-size: 15px;            /* adjust icon size */
+  color: white;
+  background: #4198b7;
+} 
+.mobile-icon{
+  background: var(--boder-bg-color);
+  color: var(--text-color);
+}
+.social-media-container > :nth-child(5){
+   display: flex;              /* make it flex */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  width: 30px;                /* fixed size for circle */
+  height: 30px;
+  border-radius: 50%;         /* circle */
+  font-size: 15px;            /* adjust icon size */
+  color: white;
+  background: black;
+}
+.social-media-container > :nth-child(6){
+     display: flex;              /* make it flex */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  width: 30px;                /* fixed size for circle */
+  height: 30px;
+  border-radius: 50%;         /* circle */
+  font-size: 15px;            /* adjust icon size */
+  color: white;
+  background: #4198b7;
+}
+.social-media-container a:hover{
+  transform: rotate(23deg);
+}
+
+.share-holder span {
+  font-size: 100;
+  border: 1.1px solid rgb(172, 147, 194);
+  border-radius: 5px;
+  background: #fff;
+  padding: 6px;
+  font-weight: bold;
+  color: #8541d7be;
+  position: fixed;
+  bottom: 130px;
+  right: 25px;
+  z-index: 1000;
+
+  /* nodding animation */
+  animation: nod-left-right 1s ease-in-out infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.share-holder span:hover {
+  transform: scale(1.3);  
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(133, 65, 215, 0.5);
+}
+
+@keyframes nod-left-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg); /* nod left */
+  }
+  75% {
+    transform: rotate(15deg);  /* nod right */
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* social media icon end here ☝️ */
+
+.dive-container{
+  display: flex;
+  flex-direction: column;
+  width: 7em;
+  border-radius: 5px;
+  background:var(--bg-color);
+  position: fixed;
+  color: var(--text-color);
+  bottom: 95px;
+  right: 50px;
+  z-index: 1000;
+  gap: 10px;
+  padding: 1em;
+  border: solid 1px rgb(161, 19, 196);
+  font-weight: 0;
+  transition: all 1s ease-in-out;
+  transform: rotate(-20deg);
+}
+.dive-container span:hover{
+  transition: all 1s ease;
+  box-shadow: 1px 1px 4px gray;
+  padding: 2px;
+  border-radius: 5px;
+  transform: scale(1);
+  cursor: pointer;
+}
+.dive-container span:active{
+   transform: scale(0);
+}
+
+
+/* Bright highlight version 👇*/
+.brigt-higt a {
+  padding: 8px;
+  border: 1px solid rgb(172, 147, 194);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  color: #8541d7be;
+  text-align: center;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+  
+  animation: satelliteGlowPurple 3s ease-in-out infinite alternate;
+  transition: all 2s linear;
+}
+.brigt-higt a:hover {
+  transform: rotate(3000deg);
+}
+
+/* End here ☝️ */
+
+.whatsapp a {
+  color: white;
+  background: rgb(10, 179, 10);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  font-size: 24px;  /* fixed */
+  text-decoration: none;
+  animation: glowAnima 2s ease-in-out infinite;
+}
+/* Floating WhatsApp button */
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp a {
+  color: white;
+  background: rgb(10, 179, 10);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(10, 179, 10, 0.7),
+              0 0 40px rgba(10, 179, 10, 0.4),
+              0 0 60px rgba(10, 179, 10, 0.2);
+  animation: satelliteGlow 3s ease-in-out infinite alternate;
+}
+
+/* Spotlight / satellite glow animation */
+@keyframes satelliteGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(10, 179, 10, 0.6),
+                0 0 30px rgba(10, 179, 10, 0.3);
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(10, 179, 10, 0.8),
+                0 0 60px rgba(10, 179, 10, 0.5),
+                0 0 80px rgba(10, 179, 10, 0.3);
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}

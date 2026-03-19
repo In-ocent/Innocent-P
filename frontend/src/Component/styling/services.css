@@ -1,0 +1,158 @@
+.services-section {
+    padding: 100px 20px;
+    /* Uses your theme-aware background gradient/color */
+    background: var(--bg-color); 
+    transition: background 0.5s ease;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 4rem auto 0;
+}
+
+.service-card {
+    /* Uses your variable for light/dark card backgrounds */
+    background: var(--nave-bg-color); 
+    padding: 45px;
+    border-radius: 24px;
+    /* Border adapts based on your theme's border variable */
+    border: 1px solid var(--bg-boder-color); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Day Light Shadow vs Night Glow */
+[data-theme="light"] .service-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+[data-theme="night"] .service-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    border-color: #f200ff; /* Matches your brand pink/purple */
+    box-shadow: 0 20px 40px rgba(192, 16, 195, 0.15);
+}
+
+.icon-box {
+    width: 65px;
+    height: 65px;
+    /* Your signature brand gradient */
+    background: linear-gradient(135deg, #f200ff, #7C53C5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 15px rgba(124, 83, 197, 0.3);
+}
+
+.service-card h4 {
+    color: var(--text-color);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    /* Uses your theme-aware speech text color */
+    color: var(--mySpech-text-color); 
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.tool-tags {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bg-boder-color);
+    /* Highlighting the tools with your brand purple */
+    color: #7C53C5; 
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Animation System */
+.fade-in { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.fade-in.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.price-card {
+    background: var(--nave-bg-color);
+    border: 1px solid var(--bg-boder-color);
+    padding: 2.5rem;
+    border-radius: 20px;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.price-card.featured {
+    background: linear-gradient(135deg, #7C53C5, #f200ff);
+    color: white;
+    transform: scale(1.05);
+    border: none;
+    position: relative;
+}
+
+.price-card.featured .stat-label, .price-card.featured p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFB800;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #7C53C5;
+    color: #7C53C5;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-solid {
+    background: white;
+    color: #7C53C5;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 1.5rem;
+    font-weight: 700;
+}
