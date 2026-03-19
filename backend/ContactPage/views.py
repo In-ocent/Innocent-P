@@ -95,19 +95,28 @@ def support_api(request):
                 json={
                     "from": "Innocoda Team <onboarding@resend.dev>",
                     "to": "innocoda.team@gmail.com",
-                    # Helps Gmail trust the source
+                    # This specifically tells Gmail who the message is REALLY from
                     "reply_to": getattr(support_instance, 'email', 'innocoda.team@gmail.com'),
-                    "subject": f"New Message from Vision Supporter: {support_instance.name}",
+                    "subject": f"Vision Support Message from {support_instance.name}",
                     "html": f"""
-                    <div style="font-family: sans-serif; padding: 20px; color: #333;">
-                        <h2 style="color: #4A5568;">You have a new message!</h2>
-                        <p><strong>From:</strong> {support_instance.name}</p>
-                        <p><strong>Intent Amount:</strong> {formatted_amount} NGN</p>
-                        <hr style="border: none; border-top: 1px solid #eee;" />
+                    <div style="font-family: sans-serif; padding: 20px; color: #333; line-height: 1.6;">
+                        <h2 style="color: #7C53C5; border-bottom: 2px solid #eee; padding-bottom: 10px;">🚀 New Support Logged</h2>
+                        
+                        <p><strong>Supporter Name:</strong> {support_instance.name}</p>
+                        <p><strong>Email Address:</strong> <a href="mailto:{getattr(support_instance, 'email', '')}">{getattr(support_instance, 'email', 'Not provided')}</a></p>
+                        <p><strong>Phone Number:</strong> {getattr(support_instance, 'phone', 'Not provided')}</p>
+                        <p><strong>Intent Amount:</strong> <span style="color: #2D3748; font-weight: bold;">{formatted_amount} NGN</span></p>
+                        
+                        <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
+                        
                         <p><strong>Message:</strong></p>
-                        <blockquote style="background: #f9f9f9; padding: 15px; border-left: 5px solid #7C53C5;">
+                        <blockquote style="background: #f7fafc; padding: 15px; border-left: 5px solid #7C53C5; font-style: italic;">
                             {support_instance.message or 'No additional details provided.'}
                         </blockquote>
+                        
+                        <footer style="margin-top: 20px; font-size: 0.8rem; color: #a0aec0;">
+                            Sent via Innocoda Support Engine
+                        </footer>
                     </div>
                 """,
                 },

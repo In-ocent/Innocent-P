@@ -26,9 +26,13 @@ class ContactMessage(models.Model):
 #         return f"{self.name} - {self.tier_name}"
 class SupportDonation(models.Model):
     name = models.CharField(max_length=255, default="Anonymous")
-    # Add 'blank=True' and 'null=True' so Django stops complaining
     email = models.EmailField(blank=True, null=True)
+    # New Field Added:
+    phone = models.CharField(max_length=20, blank=True, null=True)
     tier_name = models.CharField(max_length=100)
     amount = models.CharField(max_length=50)
     message = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.amount}"

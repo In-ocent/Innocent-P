@@ -12,16 +12,22 @@ class ContactSerializer(serializers.ModelSerializer):
 
 
 class SupportDonationSerializer(serializers.ModelSerializer):
-    # We use CharField here to stop the strict "Enter a valid email" check on empty strings
-    email = serializers.CharField(
+    # Simplified email & phone handling
+    email = serializers.EmailField(
+        required=False, allow_blank=True, allow_null=True)
+    phone = serializers.CharField(
         required=False, allow_blank=True, allow_null=True)
 
     class Meta:
         model = SupportDonation
-        fields = ['name', 'email', 'tier_name', 'amount', 'message']
+        # Added 'phone' to the fields list
+        fields = ['name', 'email', 'phone', 'tier_name',
+                  'amount', 'message', 'created_at']
 
     def validate_email(self, value):
-        # If the user actually typed something, THEN check if it's a real email
+        # DRF handles basic email validation automatically,
+        # but this keeps your custom check if you prefer it:
         if value and "@" not in value:
-            raise serializers.ValidationError("Enter a valid email address.")
+            raise serializers.ValidationError(
+                "Please provide a valid email address.")
         return value
