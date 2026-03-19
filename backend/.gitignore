@@ -1,0 +1,22 @@
+# Secret Environment Variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Database (keep your local test DB out of the cloud)
+db.sqlite3
+db.sqlite3-journal
+
+# Static & Media
+staticfiles/
+media/
+
+# Windows/Mac system files
+.DS_Store
+Thumbs.db

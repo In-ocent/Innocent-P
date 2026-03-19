@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: innocent-backend
+    env: python
+    # We add 'python backend/manage.py' because the file is inside the subfolder
+    buildCommand: pip install -r requirements.txt && python backend/manage.py collectstatic --noinput && python backend/manage.py migrate
+    # We add the $PORT bind so Render can find the "door" to your app
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --pythonpath backend backend.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      # This tells Django to use the production settings
+      - key: DEBUG
+        value: "False"
