@@ -9,7 +9,8 @@ function NaveBer() {
     // DAY, NIGHT , SYSTEM MODE functionality 👇
     const [NDtoggle, stTogglON] = useState(false);
     const [theme, setTheme] = useState("system");
-
+    // footer 
+    const year = new Date().getFullYear();
     useEffect(() => {
         if (theme === 'system') {
             // check user system preference
@@ -282,7 +283,7 @@ function NaveBer() {
                         </div>
                     </div>
                     <p className="text-center my-title mt-2 ">
-                        © 2025 Paul Innocent. All rights reserved.
+                        © {year} Paul Innocent. All rights reserved.
                     </p>
                 </div>
             </nav>
