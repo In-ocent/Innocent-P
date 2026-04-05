@@ -23,7 +23,7 @@ function Support() {
     const accountDetails = {
         number: "9158841154",
         bank: "OPay",
-        name: "Innocent Paul Ojochenemi"
+        name: "Innocent Ojochenemi Paul"
     };
 
     const handleCopy = () => {
