@@ -84,7 +84,7 @@ function Support() {
         <section className="mother">
             <div className="container-content">
                 <div className="heart-image shadow-lg" style={{ background: 'linear-gradient(135deg, #E64A8D, #7C53C5)' }}>
-                    <i className="bi bi-globe-africa"></i>
+                    <i class="bi bi-globe-europe-africa"></i>
                 </div>
                 <h1 className="support-me uppercase italic font-black tracking-tighter mt-3">Support The Vision</h1>
                 <p className="text-content opacity-75 fw-medium px-md-5">
