@@ -116,6 +116,7 @@ function Services() {
                     </div>
 
                 </div> {/* End Container */}
+                <a className='text-shadow-violet-700' href="https://in-ocent.github.io/prise/">Prising List</a>
             </section>
         </>
     );
