@@ -13,7 +13,7 @@ function Projects() {
             type: "Lead Full-Stack Engineer / Founder",
             tech: ["Python", "Django", "HTMX", "Tailwind CSS", "Vanilla JavaScript", "PostgreSQL"],
             liveLink: "https://codasite.onrender.com/",
-            github: null,
+            github: "https://github.com/InnoCoda-Studio/CodaSite",
             Pitch: "Engineered a Progressive Web App (PWA) to eradicate operational fraud and payroll leakage on large-scale construction sites.",
             challenges: `
             Designed a lightweight HTMX frontend to guarantee micro-second load times in low-bandwidth, high-friction environments. Architected a QR-based, GPS-fenced worker attendance system to digitize physical logbooks. Integrated real-time material tracking with mandatory photo-evidence protocols, and built an automated Python backend pipeline that generates and dispatches secure daily PDF ledgers to executive stakeholders.
