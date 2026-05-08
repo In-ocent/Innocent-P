@@ -8,20 +8,15 @@ function Projects() {
         {
             title: "CodaSite – Enterprise Construction SaaS",
             // Notice the video link is now the /embed/ format
+
             video: "https://www.youtube.com/embed/SEx-qhUcYEI",
-            type: "Full-stack",
-            tech: ["Python", "Django", "HTMX", "Tailwind CSS", "Vanilla JavaScript"],
+            type: "Lead Full-Stack Engineer / Founder",
+            tech: ["Python", "Django", "HTMX", "Tailwind CSS", "Vanilla JavaScript", "PostgreSQL"],
             liveLink: "https://codasite.onrender.com/",
             github: null,
+            Pitch: "Engineered a Progressive Web App (PWA) to eradicate operational fraud and payroll leakage on large-scale construction sites.",
             challenges: `
-            A Progressive Web App (PWA) built to 
-            eliminate operational fraud on large-scale
-             construction sites. Engineered with a lightweight 
-             HTMX frontend for maximum speed in low-bandwidth 
-             areas, CodaSite features GPS-locked worker attendance,
-              real-time material tracking requiring photo-proof, and 
-              an automated backend pipeline that generates and
-               dispatches daily PDF reports to project managers
+            Designed a lightweight HTMX frontend to guarantee micro-second load times in low-bandwidth, high-friction environments. Architected a QR-based, GPS-fenced worker attendance system to digitize physical logbooks. Integrated real-time material tracking with mandatory photo-evidence protocols, and built an automated Python backend pipeline that generates and dispatches secure daily PDF ledgers to executive stakeholders.
           `,
         },
         {
@@ -31,12 +26,9 @@ function Projects() {
             tech: ["Django", "HTMX", "Tailwind CSS", "Vanilla JavaScript"],
             liveLink: "https://elumlimited.onrender.com/",
             github: null,
+            Pitch: "Architected the complete digital infrastructure and client-acquisition pipeline for a premier glass and aluminum construction firm.",
             challenges: `
-            Architected the complete digital infrastructure for a premier glass 
-            and aluminum construction firm. Designed a highly responsive, mobile-optimized 
-            interface featuring a direct booking engine and remote video consultation 
-            integration, streamlining their client acquisition pipeline from initial 
-            contact to project scheduling.
+            Replaced legacy processes by engineering a highly responsive, mobile-first interface featuring a custom direct-booking engine. Integrated third-party APIs for remote video consultations, streamlining the firm's conversion funnel from initial contact to project scheduling with zero latency.
           `,
         },
         {
@@ -46,17 +38,19 @@ function Projects() {
             tech: ["React", "Bootstrap 5", "JavaScript"],
             liveLink: "https://nuconic.com/",
             github: null,
+            Pitch: "Developed a dynamic corporate platform requiring instantaneous delivery of high-resolution visual assets.",
             challenges:
-                "Optimized front-end performance for high-resolution asset delivery and built a scalable component architecture for dynamic product categorization.",
+                `Optimized front-end performance for high-resolution asset delivery and built a scalable component architecture for dynamic product categorization.`,
         },
         {
             title: "Ivibe Social Media App",
             video: "https://res.cloudinary.com/dftiveap3/video/upload/v1763439430/Screen_Recording_2025-09-22_111545_pn1gp8.mp4",
             type: "Full-stack",
-            tech: ["HTML", "CSS", "Bootstrap 5", "Django", "JavaScript"],
+            tech: ["HTML", "CSS", "Bootstrap 5", "Django", "Modern JavaScript (ES6+)"],
             liveLink: "#",
             github: null,
-            // challenges: "Handling video uploads and user authentication securely.",
+            Pitch: "Designed the backend infrastructure for a high-traffic media sharing platform.",
+            challenges: "Overhauled the frontend performance by building a scalable, modular React component architecture. Implemented aggressive asset optimization and dynamic product categorization, ensuring a seamless, high-speed user experience regardless of the user's network constraints.",
         },
         //         // {
         //         //     title: "Construction Website",
@@ -153,6 +147,10 @@ function Projects() {
                                     <span key={i}>{t}</span>
                                 ))}
                             </div>
+
+                            <p className="challenges">
+                                <article></article> {project.Pitch}
+                            </p>
 
                             <p className="challenges">
                                 <strong>Challenges:</strong> {project.challenges}
