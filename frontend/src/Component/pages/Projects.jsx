@@ -56,7 +56,7 @@ function Projects() {
             tech: ["HTML", "CSS", "Bootstrap 5", "Django", "JavaScript"],
             liveLink: "#",
             github: null,
-            challenges: "Handling video uploads and user authentication securely.",
+            // challenges: "Handling video uploads and user authentication securely.",
         },
         //         // {
         //         //     title: "Construction Website",
