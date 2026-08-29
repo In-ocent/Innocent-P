@@ -52,6 +52,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://innocent-p-a1on.vercel.app",
+    "https://innocoda.com",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "http://localhost:5173",
