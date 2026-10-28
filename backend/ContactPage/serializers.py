@@ -6,7 +6,6 @@ from .models import ContactMessage
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactMessage
-        # We include 'phone' here because it's in your React formData now
         fields = ['id', 'name', 'email', 'phone', 'message', 'created_at']
         read_only_fields = ['id', 'created_at']
 
@@ -25,8 +24,7 @@ class SupportDonationSerializer(serializers.ModelSerializer):
                   'amount', 'message', 'created_at']
 
     def validate_email(self, value):
-        # DRF handles basic email validation automatically,
-        # but this keeps your custom check if you prefer it:
+
         if value and "@" not in value:
             raise serializers.ValidationError(
                 "Please provide a valid email address.")

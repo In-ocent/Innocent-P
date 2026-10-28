@@ -35,7 +35,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # MUST BE AT THE TOP
+    'corsheaders.middleware.CorsMiddleware', 
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://innocent-p-a1on.vercel.app",
-    "https://innocoda.com",
+    "https://me.innocoda.com",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "http://localhost:5173",
@@ -156,5 +156,3 @@ if not DEBUG:
         'localhost',
         '127.0.0.1'
     ]
-else:
-    ALLOWED_HOSTS = ['*']  # Wide open for local development

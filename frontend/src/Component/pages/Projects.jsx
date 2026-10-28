@@ -44,6 +44,18 @@ function Projects() {
                 `Optimized front-end performance for high-resolution asset delivery and built a scalable component architecture for dynamic product categorization.`,
         },
         {
+            title: "InnoCoda Studio – Personal & Agency Portfolio",
+            video: "https://res.cloudinary.com/dftiveap3/video/upload/v1793201400/my-portfolior_b8jghj.mp4",
+            type: "Full-stack Web Application",
+            tech: ["React (Vite)", "Django REST Framework", "Pure CSS", "Resend API"],
+            liveLink: "https://me.innocoda.com/",
+            github: "https://github.com/In-ocent/Innocent-P",
+            Pitch: "Engineered a high-performance personal portfolio and client-acquisition web app featuring custom layouts built entirely with pure CSS and an asynchronous REST API email delivery pipeline.",
+            challenges: `
+            Built a lightning-fast Single Page Application using React and Vite, styled with custom, lightweight pure CSS for optimal performance and zero framework bloat. Coupled it with a Django REST backend featuring secure, asynchronous form endpoints integrated with the Resend API to route customer inquiries straight to inbox alerts seamlessly.
+            `,
+        },
+        {
             title: "Ivibe Social Media App",
             video: "https://res.cloudinary.com/dftiveap3/video/upload/v1763439430/Screen_Recording_2025-09-22_111545_pn1gp8.mp4",
             type: "Full-stack",

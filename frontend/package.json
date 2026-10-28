@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@rollup/wasm-node": "^4.63.1",
     "@tailwindcss/postcss": "^4.2.2",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.27",
@@ -29,6 +30,9 @@
     "react-router-dom": "^7.9.4",
     "react-simple-typewriter": "^5.0.1",
     "stream-browserify": "^3.0.0",
-    "vite-plugin-node-polyfills": "^0.25.0"
+    "vite-plugin-node-polyfills": "^0.2.0"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4.63.1"
   }
 }

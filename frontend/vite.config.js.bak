@@ -1,0 +1,31 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    nodePolyfills({
+      include: ['stream', 'path', 'util', 'buffer'],
+      globals: {
+        Buffer: true,
+        global: true,
+        process: true,
+      },
+    }),
+  ],
+  resolve: {
+    alias: {
+      rollup: '@rollup/wasm-node',
+    },
+  },
+  build: {
+    outDir: 'dist',
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      // Directs build execution through the WASM binary
+      external: [],
+    },
+  },
+  base: '/',
+});

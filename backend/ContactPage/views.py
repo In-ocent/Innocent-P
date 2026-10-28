@@ -28,7 +28,7 @@ def contact_api(request):
                     "Content-Type": "application/json",
                 },
                 json={
-                    # Use onboarding@resend.dev until your domain is verified!
+                   
                     "from": "Portfolio Contact <onboarding@resend.dev>",
                     "to": "innocoda.team@gmail.com",
                     "subject": f"📩 New Message from {contact_instance.name}",
