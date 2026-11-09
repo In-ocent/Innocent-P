@@ -42,7 +42,7 @@ The application was designed to solve common portfolio performance pitfalls: it 
 
 ---
 
-## 🚀 Running Locally
+## 🚀 Running Locally 
 
 ### Prerequisites
 - Node.js (v18+)
