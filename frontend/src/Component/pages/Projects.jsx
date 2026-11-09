@@ -12,7 +12,7 @@ function Projects() {
             video: "https://www.youtube.com/embed/SEx-qhUcYEI",
             type: "Lead Full-Stack Engineer / Founder",
             tech: ["Python", "Django", "HTMX", "Tailwind CSS", "Vanilla JavaScript", "PostgreSQL"],
-            liveLink: "https://codasite.onrender.com/",
+            liveLink: "https://codasite.com/",
             github: null,
             //"https://github.com/InnoCoda-Studio/CodaSite",
             Pitch: "Engineered a Progressive Web App (PWA) to eradicate operational fraud and payroll leakage on large-scale construction sites.",
